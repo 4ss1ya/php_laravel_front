@@ -1,0 +1,86 @@
+body{
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  height: 100vh;
+  background: radial-gradient(#580EF6,#1A1c22);
+
+}
+
+.auth{
+  width: 550px;
+  margin: 150px auto;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0px 0px 48px -10px rgba(0,0,0,0.75);
+
+}
+.auth_title{
+  font-size: 35px;
+  padding: 30px 0;
+}
+input{
+  width: 80%;
+  margin: 10px 0;
+  height: 45px;
+  border: 1px solid #9633FF;
+
+  border-radius: 30px;
+  padding: 0 15px;
+}
+input:focus{
+  outline: none;
+  box-shadow: 0px 0px 35px -10px rgba(150,51,255,1);
+}
+.auth_btn{
+  width: 300px;
+  height: 40px;
+  border-radius: 30px;
+  outline: none;
+  border:none;
+  color: #fff;
+  font-size: 20px;
+  margin-top: 30px;
+  box-shadow: 0px 0px 37px -10px rgba(150,51,255,1);
+  background: linear-gradient(90deg, rgba(131,58,180,1) 28%, rgba(69,91,252,1) 100%);
+}
+.auth_btn:focus{
+  outline: none;
+}
+.auth_btn:hover{
+  opacity: 0.9;
+}
+.auth_text{
+  margin: 15px 0;
+  color: #9633FF;
+  padding-bottom: 30px;
+}
+.auth_text button{
+  border: none;
+  outline: none;
+  color: #9633FF;
+  background: transparent;
+  font-weight: bold;
+}
+.auth_text button:hover{
+  opacity: 0.8;
+}
+#errorMessage{
+  color: red;
+  display: block;
+}
+.error {
+  position: relative;
+  animation: shake .1s linear;
+  animation-iteration-count: 3;
+}
+
+
+@keyframes shake {
+  0% {
+    left: -3px;
+  }
+  100% {
+    right: -3px;
+  }
+}

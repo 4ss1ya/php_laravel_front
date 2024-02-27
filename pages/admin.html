@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <link rel="icon" href="../img/logo.png">
+  <link rel="stylesheet" href="../css/admin.css">
+  <title>Admin Panel</title>
+</head>
+
+<body>
+  <div id="loginForm" class="login-page">
+    <div class="form">
+      <h2>Please login</h2>
+      <div class="login-form">
+        <input type="text" id="login" placeholder="login" autocomplete="off" />
+        <input type="password" id="password" placeholder="password" autocomplete="off" />
+        <button onclick="login()">login</button>
+      </div>
+    </div>
+  </div>
+  <div id="auth" style="display: none">
+    <button id="logout" onclick="logout()">Log out</button>
+    <h1 class="title">Admin Panel
+      <hr>
+    </h1>
+    <div class="container">
+      <table id="myTable">
+        <tr>
+          <th>Name</th>
+          <th>email</th>
+          <th>Password</th>
+          <th>ban</th>
+          <th>Eye</th>
+          <th>Brain</th>
+          <th>Eye/Brain</th>
+          <td>Session</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <script src="../js/admin.js"></script>
+</body>
+
+</html>

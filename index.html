@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/index.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+  <link rel="icon" href="img/logo.png">
+  <title>WebDev</title>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="container">
+        <div class="nav_div">
+          <div class="logo">
+            <img src="img/logoW.png" alt="">
+          </div>
+          <div>
+            <ul>
+              <li>
+                <a class="nav__link" href="#courses">Сourses</a>
+              </li>
+              <li>
+                <a class="nav__link" href="#achievement">Achievement</a>
+              </li>
+              <li>
+                <a class="nav__link" href="#contact">Contact</a>
+              </li>
+              <li id="line">
+              </li>
+              <li id="notAuth1">
+                <a href="pages/auth.html">Sign up</a>
+              </li>
+              <li id="notAuth2">
+                <a href="pages/auth.html">Log in</a>
+              </li>
+              <li class="auth">
+                <a href="pages/profile.html" id="user_name"></a>
+              </li>
+              <li>
+                <button class="logoutBtn" id="logoutBtn" style="display: none;" onclick="logout()">Log out</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <p id='head1' class='header'> Train your brain with pleasure </p>
+    <p id='head2' class='header'>Develop memory,<br> Attention and thinking </p>
+    <p id='head3' class='header'>Smart Brain <br> Boost yourself</p>
+      <div class='light x1'></div>
+      <div class='light x2'></div>
+      <div class='light x3'></div>
+      <div class='light x4'></div>
+      <div class='light x5'></div>
+      <div class='light x6'></div>
+      <div class='light x7'></div>
+      <div class='light x8'></div>
+      <div class='light x9'></div>
+  </header>
+  <section class="bg-light" id="courses">
+    <h1 class="title">Our courses
+      <hr>
+    </h1>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="item">
+            <h3>Eye Training</h3>
+            <p>- video lessons</p>
+            <p>- practical tasks</p>
+            <p>- discussion group</p>
+            <p>- class schedule</p>
+
+            <a class="js-scroll-trigger" onclick="buyCourses('eye')">10 000 ₸</a>
+          </div>
+        </div>
+        <div class="col-lg-4 bigItem">
+          <div class="item">
+            <h3>Eye/Brain Training</h3>
+            <p>- video lessons</p>
+            <p>- practical tasks</p>
+            <p>- discussion group</p>
+            <p>- class schedule</p>
+            <p>- 1 webinar (questions and answers)</p>
+            <p>- work with a curator</p>
+            <p>- teambuilding</p>
+            <a class="js-scroll-trigger" onclick="buyCourses('all')">15 000 ₸</a>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="item">
+            <h3>Brain Training</h3>
+            <p>- video lessons</p>
+            <p>- practical tasks</p>
+            <p>- discussion group</p>
+            <p>- class schedule</p>
+            <a class="js-scroll-trigger" onclick="buyCourses('brain')">8 000 ₸</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="achievement">
+    <h1 class="title">Achievement
+      <hr>
+    </h1>
+    <div class="container">
+      <div class="row best_items">
+        <div class="col-md-3 count_item">
+          <h1 class="count">3</h1>
+          <span class="count_title">
+            Unique courses
+          </span>
+        </div>
+        <div class="col-md-3 count_item">
+          <h1 class="count">30</h1>
+          <span class="count_title">
+            Graduates
+          </span>
+        </div>
+        <div class="col-md-3 count_item">
+          <h1 class="count">45</h1>
+          <span class="count_title">
+            Available sites
+          </span>
+        </div>
+        <div class="col-md-3 count_item">
+          <h1 class="count">90</h1>
+          <span class="count_title">
+            Number of video tutorials
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div id="map-canvas"></div>
+    <div>
+      <a href="#" class="fa fa-facebook"></a>
+      <a href="#" class="fa fa-youtube"></a>
+      <a href="#" class="fa fa-instagram"></a>
+      <br>
+      <span>&copy; Copyright SmartBrain. All Rights Reserved</span>
+    </div>
+  </footer>
+  <script src="js/index.js"></script>
+  <script type="text/javascript">
+    jQuery(document).ready(function ($) {
+      $(".nav__link").click(function (event) {
+        event.preventDefault();
+        $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1200);
+      });
+    });
+  </script>
+  <script>
+    $(document).ready(function () {
+      ymaps.ready(function () {
+        var myMap = new ymaps.Map('map-canvas', {
+          center: [43.235095, 76.909906],
+          zoom: 18,
+          controls: []
+        });
+        myPlacemark = createPlacemark([43.235095, 76.909906]);
+        myMap.geoObjects.add(myPlacemark);
+        myMap.behaviors.disable('scrollZoom');
+        myMap.controls.add(new ymaps.control.ZoomControl({ options: { position: { right: 10, top: 90 } } }));
+      });
+      function createPlacemark(coords) {
+        return new ymaps.Placemark(coords, {
+          iconCaption: 'поиск...'
+        }, {
+            iconLayout: 'default#image',
+            iconImageHref: 'img/Bitmap.png',
+            iconImageSize: [30, 50],
+            iconImageOffset: [-15, -50],
+            draggable: false
+          });
+      }
+    });
+  </script>
+</body>
+
+</html>
+

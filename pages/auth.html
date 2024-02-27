@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <link rel="stylesheet" href="../css/auth.css">
+  <link rel="icon" href="../img/logo.png">
+
+
+  <title>Sign up</title>
+</head>
+
+<body>
+  <div class="auth">
+    <div id="signup" class="signup">
+      <h2 class="auth_title">Sign Up</h2>
+      <div class="inputs">
+        <input type="text" id="name" placeholder="Name" autocomplete="off">
+        <input type="email" id="email" placeholder="email" autocomplete="off">
+        <input type="password" id="password" placeholder="password" autocomplete="off">
+        <span id="errorMessage"></span>
+      </div>
+      <button class="auth_btn" onclick="signup()">Create Account</button>
+      <p class="auth_text">Already have an account?
+        <button onclick="select('signin')">Sign in</button>
+      </p>
+    </div>
+    <div id="signin" class="signup" style="display:none;">
+      <h2 class="auth_title">Sign In</h2>
+      <div class="inputs">
+        <input type="email" id="logEmail" placeholder="email" autocomplete="off">
+        <input type="password" id="logPassword" placeholder="password" autocomplete="off">
+      </div>
+      <button class="auth_btn" onclick="signin()">Sign In</button>
+      <p class="auth_text">Don't have an account?
+        <button onclick="select('signup')">Sign Up</button>
+      </p>
+    </div>
+  </div>
+  <script src="../js/auth.js"></script>
+</body>
+
+</html>
